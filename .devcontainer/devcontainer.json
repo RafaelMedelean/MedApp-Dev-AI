@@ -3,7 +3,7 @@
 {
 	"name": "Container for Ai development",
 	"mounts": [
-		"source=C:\\Users\\medel\\Desktop\\fisiere\\sdb2,target=/workspaces/MedApp-Dev-AI/sdb2,type=bind,consistency=cached"
+		//"source=${localWorkspaceFolder} , target=workspace/,type=bind,consistency=cached"
 	],
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": {
@@ -14,7 +14,7 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
+	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 

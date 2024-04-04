@@ -18,10 +18,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-path_to_folder = "/sdb/LUNA16/balanced_candidates/"
-feature_vector_csv = "/sdb/ImageRetrievalVest/saving_features/saving_features_balanced_candidates.csv"
-path_to_csv = "/sdb/ImageRetrievalVest/csvs/all_patches_balanced_candidates.csv" 
-path_to_jpegs_folder="/sdb/LUNA16/balanced_candidates_augmented_jpegs"
+path_to_folder = "/workspaces/MedApp-AI-Dev/sdb2/balanced_candidates"
+feature_vector_csv = "/workspaces/MedApp-AI-Dev/sdb2/saving_features_balanced_candidates.csv"
+path_to_csv = "/workspaces/MedApp-AI-Dev/sdb2/all_patches_balanced_candidates.csv" 
+path_to_jpegs_folder="/workspaces/MedApp-AI-Dev/sdb2/balanced_candidates_augmented_jpegs"
 path_to_jpges_local="/public/"
 
 @app.get("/next_image")
@@ -33,7 +33,7 @@ def ai(image: str | None = None):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         feature_extractor = FeatureExtractor(
             model_depth=169,
-            pretrained_weights_path='InteliMed.AI\sdb\ImageRetrievalVest\saving_models\Densenet169_bigger_smaller_first_training_Loss(0.8,2)_optim(0.0001,0.001)_StepLR(50,0.8)\best_model_f1=0.884437596302003_epoch=44.pth',
+            pretrained_weights_path='sdb/ImageRetrievalVest/saving_models/Densenet169_bigger_smaller_first_training_Loss(0.8,2)_optim(0.0001,0.001)_StepLR(50,0.8)',
             device=device
         )
         
