@@ -116,7 +116,7 @@ class FeatureExtractor:
 #     listx = feature_extractor.process_single_image(full_image_path1, feature_vector_csv, output_csv_path)
 #     return listx
 
-def select_random_path(path_to_csv="/sdb/ImageRetrievalVest/csvs/all_patches_balanced_candidates.csv", path_to_jpegs_folder="/sdb/LUNA16/balanced_candidates_augmented_jpegs"):
+def select_random_path(path_to_csv="/workspaces/MedApp-Dev-AI/sdb2/all_patches_balanced_candidates.csv", path_to_jpegs_folder="/workspaces/MedApp-Dev-AI/sdb2/balanced_candidates_augmented_jpegs"):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(path_to_csv)
     

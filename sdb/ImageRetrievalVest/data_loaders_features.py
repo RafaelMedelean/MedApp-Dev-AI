@@ -66,10 +66,10 @@ class CustomDataset(Dataset):
         return image , label, original_x, original_y, original_z, resample_x, resample_y, resample_z, image_path
 
 # Load the entire dataset
-path_to_csv = '/sdb/ImageRetrievalVest/csvs/all_patches_balanced_candidates.csv'#'/sdb/ImageRetrievalVest/csvs/all_patches(crops)_names_labels_smaller_bigger_csv_completed.csv'#'/sdb/LUNA16/all_patches(crops)_names_labels_smaller_csv_completed.csv'
+path_to_csv = '/workspaces/MedApp-Dev-AI/sdb2/all_patches_balanced_candidates.csv'#'/sdb/ImageRetrievalVest/csvs/all_patches(crops)_names_labels_smaller_bigger_csv_completed.csv'#'/sdb/LUNA16/all_patches(crops)_names_labels_smaller_csv_completed.csv'
 
 # Define path to images
-path_images = '/sdb/LUNA16/balanced_candidates/'#'/sdb/LUNA16/64x45x45_all_patches_smaller_csv_completed/'
+path_images = '/workspaces/MedApp-Dev-AI/sdb2/balanced_candidates/'#'/sdb/LUNA16/64x45x45_all_patches_smaller_csv_completed/'
 
 dataset = CustomDataset(path_to_csv, path_images, augmentations=get_validation_augmentations())
 
