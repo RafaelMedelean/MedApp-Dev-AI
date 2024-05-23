@@ -2,16 +2,18 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
 	"name": "Container for Ai development",
-	"mounts": [
-		"source=C:\\Users\\medel\\Desktop\\fisiere\\sdb2,target=/workspaces/MedApp-Dev-AI/sdb2,type=bind,consistency=cached"
-	],
+	// "mounts": [
+	// 	"source=C:\\Users\\medel\\Desktop\\fisiere\\sdb2,target=/workspaces/MedApp-Dev-AI/sdb2,type=bind,consistency=cached"
+	// ],
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": {
 		"dockerfile": "Dockerfile"
 		// Update 'VARIANT' to pick a non-default variant. More info: https://containers.dev/guide/variants
 		// "args": { "VARIANT": "buster" }
-	}  
-
+	},
+	
+	"appPort": ["8000:8000"],
+	"postCreateCommand": "pip install --retries 5 --timeout=120 --no-cache-dir -r /workspaces/MedApp-Dev-AI/api_requirements.txt"
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
