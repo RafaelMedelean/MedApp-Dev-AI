@@ -89,7 +89,7 @@ class FeatureExtractor:
         
 
 # Usage
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 feature_extractor = FeatureExtractor(
     model_depth=169,
     pretrained_weights_path='/sdb/ImageRetrievalVest/saving_models/Densenet169_smaller_csv/best_model_0.8421052631578948.pth',

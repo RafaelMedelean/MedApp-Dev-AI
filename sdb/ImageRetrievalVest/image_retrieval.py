@@ -18,7 +18,7 @@ class FeatureExtractor:
         self.device = device
 
     def load_pretrained_weights(self, weights_path):
-        pretrained_dict = torch.load(weights_path)
+        pretrained_dict = torch.load(weights_path,map_location=torch.device('cpu'))
         model_dict = self.model.state_dict()
         pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict and model_dict[k].size() == v.size()}
         model_dict.update(pretrained_dict)
@@ -103,7 +103,7 @@ class FeatureExtractor:
         return (closest_image_numpys[0],closest_images_jpegs[0])
 
 # Usage example
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cpu")
 # feature_extractor = FeatureExtractor(
 #     model_depth=169,
 #     pretrained_weights_path='/sdb/ImageRetrievalVest/saving_models/Densenet169_bigger_smaller_first_training_Loss(0.8,2)_optim(0.0001,0.001)_StepLR(50,0.8)/best_model_f1=0.884437596302003_epoch=44.pth',

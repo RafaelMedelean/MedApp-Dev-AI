@@ -2,9 +2,9 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
 	"name": "Container for Ai development",
-	// "mounts": [
-	// 	"source=C:\\Users\\medel\\Desktop\\fisiere\\sdb2,target=/workspaces/MedApp-Dev-AI/sdb2,type=bind,consistency=cached"
-	// ],
+	"mounts": [
+		"source=/Users/maleticimiroslav/Concursuri/InteliMed.AIProject/MedApp-Dev-AI/sdb2,target=/workspaces/MedApp-Dev-AI/sdb2,type=bind,consistency=cached"
+	],
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": {
 		"dockerfile": "Dockerfile"

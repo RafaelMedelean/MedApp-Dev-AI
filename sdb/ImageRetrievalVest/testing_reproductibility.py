@@ -63,7 +63,7 @@ if not os.path.exists(save_output_directory):
 ##################################################################################################################
 
 writer = SummaryWriter(f'/sdb/ImageRetrievalVest/tensorboard/{writer_name}')
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 ###################################################################################################################
 #Models
